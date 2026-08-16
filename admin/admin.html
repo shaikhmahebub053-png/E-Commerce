@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALIBABA.SHOP Admin</title>
+    <meta name="theme-color" content="#131921" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-body">
+    <div id="adminLoginOverlay" class="login-overlay">
+      <div class="login-card">
+        <div class="brand-badge">ALIBABA</div>
+        <h1>Admin Access</h1>
+        <p class="demo-note">Demo Mode: Data is stored locally in this browser.</p>
+        <form id="adminLoginForm" class="login-form">
+          <label>
+            <span>Username</span>
+            <input type="text" id="adminUsername" value="admin" required />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" id="adminPassword" value="admin123" required />
+          </label>
+          <button type="submit" class="primary-btn">Enter Admin Panel</button>
+        </form>
+        <p class="login-hint">Default demo credentials: admin / admin123</p>
+      </div>
+    </div>
+
+    <div id="adminApp" class="admin-shell hidden">
+      <aside class="sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+          <div class="brand">
+            <span class="brand-mark">AL</span>
+            <div>
+              <strong>ALIBABA</strong>
+              <small>SHOP ADMIN</small>
+            </div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-section="dashboard"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></button>
+          <button class="nav-item" data-section="products"><i class="fa-solid fa-box"></i><span>Products</span></button>
+          <button class="nav-item" data-section="categories"><i class="fa-solid fa-tags"></i><span>Categories</span></button>
+          <button class="nav-item" data-section="orders"><i class="fa-solid fa-bag-shopping"></i><span>Orders</span></button>
+          <button class="nav-item" data-section="inventory"><i class="fa-solid fa-warehouse"></i><span>Inventory</span></button>
+          <button class="nav-item" data-section="deals"><i class="fa-solid fa-bolt"></i><span>Today's Deals</span></button>
+          <button class="nav-item" data-section="bestSellers"><i class="fa-solid fa-crown"></i><span>Best Sellers</span></button>
+          <button class="nav-item" data-section="homepage"><i class="fa-solid fa-house"></i><span>Homepage</span></button>
+          <button class="nav-item" data-section="reviews"><i class="fa-solid fa-star"></i><span>Reviews</span></button>
+          <button class="nav-item" data-section="content"><i class="fa-solid fa-file-lines"></i><span>Website Content</span></button>
+          <button class="nav-item" data-section="settings"><i class="fa-solid fa-gear"></i><span>Settings</span></button>
+        </nav>
+      </aside>
+
+      <div class="main-panel">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button id="sidebarToggle" class="icon-btn mobile-only" type="button" aria-label="Toggle sidebar">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div>
+              <p class="eyebrow">Control Center</p>
+              <h2 id="pageTitle">Dashboard</h2>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <a class="secondary-btn" href="../index.html" target="_blank" rel="noreferrer">View Website</a>
+            <button id="logoutBtn" class="ghost-btn" type="button">Logout</button>
+          </div>
+        </header>
+
+        <main class="content-area">
+          <section class="page-section active" data-section-content="dashboard">
+            <div id="dashboardStats" class="stats-grid"></div>
+            <div class="panel-grid">
+              <div class="panel card">
+                <div class="panel-header">
+                  <h3>Recent Orders</h3>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="recentOrdersTable"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="panel card">
+                <div class="panel-header">
+                  <h3>Recently Added Products</h3>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody id="recentProductsTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel card lower-panel">
+              <div class="panel-header">
+                <h3>Low Stock Products</h3>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Brand</th>
+                      <th>Stock</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="lowStockTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="products">
+            <div class="toolbar card">
+              <div class="toolbar-group">
+                <input id="productSearch" type="search" placeholder="Search product name, ID, brand, category" />
+              </div>
+              <div class="toolbar-actions">
+                <select id="productCategoryFilter">
+                  <option value="">All categories</option>
+                </select>
+                <select id="stockFilter">
+                  <option value="">All stock</option>
+                  <option value="in-stock">In Stock</option>
+                  <option value="low-stock">Low Stock</option>
+                  <option value="out-stock">Out of Stock</option>
+                </select>
+                <select id="productSort">
+                  <option value="newest">Newest</option>
+                  <option value="price-asc">Price Low → High</option>
+                  <option value="price-desc">Price High → Low</option>
+                  <option value="rating">Rating</option>
+                  <option value="stock">Stock</option>
+                </select>
+                <button id="addProductBtn" class="primary-btn" type="button"><i class="fa-solid fa-plus"></i> Add Product</button>
+              </div>
+            </div>
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Product</th>
+                      <th>Category</th>
+                      <th>Brand</th>
+                      <th>Price</th>
+                      <th>Stock</th>
+                      <th>Flags</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="productsTableBody"></tbody>
+                </table>
+              </div>
+              <div class="pagination-row">
+                <div id="productPaginationInfo" class="pagination-info"></div>
+                <div id="productPagination" class="pagination"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="categories">
+            <div class="toolbar card">
+              <div class="toolbar-actions">
+                <button id="addCategoryBtn" class="primary-btn" type="button"><i class="fa-solid fa-plus"></i> Add Category</button>
+              </div>
+            </div>
+            <div id="categoriesList" class="category-list"></div>
+          </section>
+
+          <section class="page-section" data-section-content="orders">
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>
+                      <th>Items</th>
+                      <th>Total</th>
+                      <th>Payment</th>
+                      <th>Order Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ordersTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="inventory">
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Image</th>
+                      <th>SKU / ID</th>
+                      <th>Stock</th>
+                      <th>Status</th>
+                      <th>Update</th>
+                    </tr>
+                  </thead>
+                  <tbody id="inventoryTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="deals">
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Category</th>
+                      <th>Deal Discount</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dealsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="bestSellers">
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Category</th>
+                      <th>Brand</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bestSellerTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="homepage">
+            <div class="card form-card">
+              <h3>Homepage Configuration</h3>
+              <form id="homepageForm" class="admin-form grid-form">
+                <label><span>Hero Heading</span><input name="heroHeading" type="text" /></label>
+                <label><span>Hero Description</span><textarea name="heroDescription"></textarea></label>
+                <label><span>Hero Image URL</span><input name="heroImage" type="url" /></label>
+                <label><span>Hero Button Text</span><input name="heroButtonText" type="text" /></label>
+                <label><span>Hero Button Link</span><input name="heroButtonLink" type="text" /></label>
+                <label><span>Featured Product IDs</span><input name="featuredIds" type="text" /></label>
+                <label><span>Trending Product IDs</span><input name="trendingIds" type="text" /></label>
+                <label><span>Best Seller Product IDs</span><input name="bestSellersIds" type="text" /></label>
+                <label><span>Today's Deal IDs</span><input name="todayDealsIds" type="text" /></label>
+                <label><span>New Arrival IDs</span><input name="newArrivalsIds" type="text" /></label>
+                <label><span>Recommended Product IDs</span><input name="recommendedIds" type="text" /></label>
+                <div class="form-actions span-full">
+                  <button class="primary-btn" type="submit">Save Homepage</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="reviews">
+            <div class="card table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Customer</th>
+                      <th>Rating</th>
+                      <th>Review</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reviewsTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="content">
+            <div class="card form-card">
+              <h3>Website Content</h3>
+              <form id="contentForm" class="admin-form grid-form">
+                <label><span>Homepage Heading</span><input name="homepageHeading" type="text" /></label>
+                <label><span>Homepage Subtitle</span><input name="homepageSubtitle" type="text" /></label>
+                <label><span>Contact Phone</span><input name="contactPhone" type="text" /></label>
+                <label><span>Contact Email</span><input name="contactEmail" type="email" /></label>
+                <label class="span-full"><span>About Us</span><textarea name="aboutUs"></textarea></label>
+                <label class="span-full"><span>Customer Service</span><textarea name="customerService"></textarea></label>
+                <label class="span-full"><span>Footer Text</span><textarea name="footerText"></textarea></label>
+                <label class="span-full"><span>Announcement Bar</span><textarea name="announcementBar"></textarea></label>
+                <div class="form-actions span-full">
+                  <button class="primary-btn" type="submit">Save Website Content</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="page-section" data-section-content="settings">
+            <div class="card settings-grid">
+              <div class="settings-group">
+                <h3>Data Management</h3>
+                <button id="exportDataBtn" class="secondary-btn" type="button"><i class="fa-solid fa-download"></i> Export Data</button>
+                <label class="file-input-btn">
+                  <input id="importDataInput" type="file" accept="application/json" />
+                  <span><i class="fa-solid fa-upload"></i> Import Data</span>
+                </label>
+                <button id="backupDataBtn" class="secondary-btn" type="button"><i class="fa-solid fa-floppy-disk"></i> Backup Website Data</button>
+                <button id="restoreDataBtn" class="secondary-btn" type="button"><i class="fa-solid fa-arrow-rotate-left"></i> Restore Website Data</button>
+                <button id="resetDemoBtn" class="danger-btn" type="button"><i class="fa-solid fa-trash"></i> Reset Demo Data</button>
+              </div>
+              <div class="settings-group">
+                <h3>Admin Access</h3>
+                <form id="credentialForm" class="admin-form compact-form">
+                  <label><span>Username</span><input id="credentialUsername" type="text" /></label>
+                  <label><span>Password</span><input id="credentialPassword" type="password" /></label>
+                  <button class="primary-btn" type="submit">Update Demo Login</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="confirmationModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <h3 id="confirmTitle">Confirm action</h3>
+        <p id="confirmMessage">Are you sure?</p>
+        <div class="modal-actions">
+          <button id="confirmCancelBtn" class="ghost-btn" type="button">Cancel</button>
+          <button id="confirmActionBtn" class="danger-btn" type="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="productModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card wide-modal">
+        <div class="modal-header">
+          <h3 id="productModalTitle">Add Product</h3>
+          <button class="icon-btn modal-close" data-close="productModal" type="button"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <form id="productForm" class="admin-form grid-form product-form">
+          <input type="hidden" name="id" />
+          <label><span>Product Name</span><input name="name" required /></label>
+          <label><span>Category</span><input name="category" required /></label>
+          <label><span>Subcategory</span><input name="subcategory" /></label>
+          <label><span>Brand</span><input name="brand" /></label>
+          <label><span>Price</span><input name="price" type="number" min="0" step="0.01" required /></label>
+          <label><span>MRP</span><input name="mrp" type="number" min="0" step="0.01" /></label>
+          <label><span>Discount %</span><input name="discount" type="number" min="0" max="100" /></label>
+          <label><span>Stock</span><input name="stock" type="number" min="0" /></label>
+          <label><span>Rating</span><input name="rating" type="number" min="0" max="5" step="0.1" /></label>
+          <label><span>Review Count</span><input name="reviewCount" type="number" min="0" /></label>
+          <label class="span-full"><span>Description</span><textarea name="description"></textarea></label>
+          <label class="span-full"><span>Specifications (key:value lines)</span><textarea name="specifications"></textarea></label>
+          <label class="span-full"><span>Tags</span><input name="tags" type="text" /></label>
+          <label><span>Main Image</span><input name="image" type="url" /></label>
+          <label><span>Image 2</span><input name="image2" type="url" /></label>
+          <label><span>Image 3</span><input name="image3" type="url" /></label>
+          <label><span>Image 4</span><input name="image4" type="url" /></label>
+          <div class="checkbox-row span-full">
+            <label><input type="checkbox" name="featured" /> Featured</label>
+            <label><input type="checkbox" name="bestSeller" /> Best Seller</label>
+            <label><input type="checkbox" name="todayDeal" /> Today's Deal</label>
+            <label><input type="checkbox" name="newArrival" /> New Arrival</label>
+          </div>
+          <div class="form-actions span-full">
+            <button type="button" class="ghost-btn" data-close="productModal">Cancel</button>
+            <button type="submit" class="primary-btn">Save Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="orderModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card wide-modal">
+        <div class="modal-header">
+          <h3>Order Details</h3>
+          <button class="icon-btn modal-close" data-close="orderModal" type="button"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="orderDetailsContent" class="order-detail-content"></div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

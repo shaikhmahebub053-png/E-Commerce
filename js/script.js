@@ -428,10 +428,10 @@ const sharedProducts = [
   }
 ];
 
-const featuredProducts = sharedProducts.filter((product) => product.featured);
-const dealProducts = sharedProducts.filter((product) => product.deal);
-const bestSellerProducts = sharedProducts.filter((product) => product.bestSeller);
-const Mostlikelyproduct = sharedProducts.filter((product) => product.featured || product.bestSeller).slice(0, 4);
+let featuredProducts = sharedProducts.filter((product) => product.featured);
+let dealProducts = sharedProducts.filter((product) => product.deal);
+let bestSellerProducts = sharedProducts.filter((product) => product.bestSeller);
+let Mostlikelyproduct = sharedProducts.filter((product) => product.featured || product.bestSeller).slice(0, 4);
 
 const expandedCatalogConfig = {
   'Mobiles': {
@@ -724,6 +724,57 @@ function generateExpandedCatalog() {
 
 const extendedCatalogProducts = generateExpandedCatalog();
 sharedProducts.push(...extendedCatalogProducts);
+
+function syncProductsFromStorage() {
+  try {
+    const stored = JSON.parse(localStorage.getItem('alibaba_products') || 'null');
+    if (Array.isArray(stored) && stored.length) {
+      const normalized = stored.map((product) => ({
+        ...product,
+        id: Number(product.id ?? 0),
+        price: Number(product.price ?? 0),
+        originalPrice: Number(product.originalPrice ?? product.mrp ?? product.price ?? 0),
+        mrp: Number(product.mrp ?? product.originalPrice ?? product.price ?? 0),
+        discount: Number(product.discount ?? 0),
+        stock: Number(product.stock ?? 0),
+        rating: Number(product.rating ?? 0),
+        reviews: Number(product.reviews ?? product.reviewCount ?? 0),
+        tag: product.tag || (product.bestSeller ? 'Best Seller' : product.deal ? 'Limited Deal' : product.featured ? 'Featured' : 'Popular'),
+        tags: Array.isArray(product.tags) ? product.tags : [],
+        images: Array.isArray(product.images) ? product.images.filter(Boolean) : (product.image ? [product.image] : [])
+      }));
+      sharedProducts.splice(0, sharedProducts.length, ...normalized);
+    }
+  } catch (error) {
+    console.warn('Unable to sync admin product catalog:', error);
+  }
+
+  featuredProducts = sharedProducts.filter((product) => product.featured);
+  dealProducts = sharedProducts.filter((product) => product.deal);
+  bestSellerProducts = sharedProducts.filter((product) => product.bestSeller);
+  Mostlikelyproduct = sharedProducts.filter((product) => product.featured || product.bestSeller).slice(0, 4);
+  if (typeof window !== 'undefined') {
+    window.ALIBABA_PRODUCTS = sharedProducts;
+  }
+}
+
+syncProductsFromStorage();
+
+window.addEventListener('storage', (event) => {
+  if (!event.key || event.key === 'alibaba_products') {
+    syncProductsFromStorage();
+    if (typeof renderHomePage === 'function') {
+      renderHomePage();
+    }
+  }
+});
+
+window.addEventListener('alibaba-products-updated', () => {
+  syncProductsFromStorage();
+  if (typeof renderHomePage === 'function') {
+    renderHomePage();
+  }
+});
 
 function formatCurrency(value) {
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
