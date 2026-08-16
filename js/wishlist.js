@@ -10,7 +10,7 @@ function renderWishlist() {
       <section class="empty-state-card" aria-live="polite">
         <h2>Your Wishlist is Empty</h2>
         <p>Save products you love to compare, revisit, and purchase later.</p>
-        <a class="primary-btn" href="index.html">Discover Products</a>
+        <a class="primary-btn" href="../index.html">Discover Products</a>
       </section>
     `;
     return;

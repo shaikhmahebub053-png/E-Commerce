@@ -729,8 +729,28 @@ function formatCurrency(value) {
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
 }
 
+function isHtmlFolderPage() {
+  const path = window.location.pathname || '';
+  return /\/html\//.test(path) || path.endsWith('/html') || path.endsWith('/html/');
+}
+
+function resolvePagePath(fileName) {
+  const cleanName = String(fileName || '').replace(/^\.?\//, '');
+  if (!cleanName) return cleanName;
+
+  if (isHtmlFolderPage()) {
+    if (cleanName === 'index.html') return '../index.html';
+    if (cleanName.startsWith('html/')) return `../${cleanName.replace(/^html\//, '')}`;
+    return cleanName;
+  }
+
+  if (cleanName === 'index.html') return 'index.html';
+  if (cleanName.startsWith('html/')) return cleanName;
+  return `html/${cleanName}`;
+}
+
 function buildProductLink(productId) {
-  return `product-details.html?id=${productId}`;
+  return `${resolvePagePath('product-details.html')}?id=${productId}`;
 }
 
 function getProductById(productId) {
@@ -1138,7 +1158,7 @@ function getSearchSuggestions(query, limit = 30) {
 function goToSearch(query) {
   const value = normalizeSearchText(query);
   if (!value) return;
-  window.location.href = `search.html?q=${encodeURIComponent(value)}`;
+  window.location.href = `${resolvePagePath('search.html')}?q=${encodeURIComponent(value)}`;
 }
 
 function createRipple(element, event) {
@@ -1472,25 +1492,27 @@ function renderHomePage() {
 }
 
 function bindCartLink() {
+  const cartPath = resolvePagePath('cart.html');
   document.querySelectorAll('.cart-link').forEach((link) => {
-    link.setAttribute('href', 'cart.html');
+    link.setAttribute('href', cartPath);
     link.addEventListener('click', (event) => {
       if (!getCartItems().length) {
         event.preventDefault();
       }
-      window.location.href = 'cart.html';
+      window.location.href = cartPath;
     });
   });
 }
 
 function bindWishlistLink() {
+  const wishlistPath = resolvePagePath('wishlist.html');
   document.querySelectorAll('[aria-label="Wishlist"], .wishlist-link').forEach((button) => {
     if (button.tagName === 'A') {
-      button.setAttribute('href', 'wishlist.html');
+      button.setAttribute('href', wishlistPath);
       return;
     }
     button.addEventListener('click', () => {
-      window.location.href = 'wishlist.html';
+      window.location.href = wishlistPath;
     });
   });
 }

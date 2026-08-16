@@ -65,7 +65,7 @@ function renderNotFound() {
     <section class="product-error" aria-label="Product not found">
       <h2>Product Not Found</h2>
       <p>The selected product could not be found. Please return to browsing and try another item.</p>
-      <a class="btn-primary" href="index.html">Back to Shopping</a>
+      <a class="btn-primary" href="../index.html">Back to Shopping</a>
     </section>
   `;
 }
@@ -122,7 +122,7 @@ function renderProduct() {
   productShell.innerHTML = `
     <section class="product-details-card" aria-label="Product details">
       <nav class="product-breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
+        <a href="../index.html">Home</a>
         <span>/</span>
         <a href="${product.category === 'Electronics' ? 'electronics.html' : product.category === 'Fashion' ? 'fashion.html' : 'index.html'}">${product.category}</a>
         <span>/</span>
@@ -220,7 +220,7 @@ function renderProduct() {
           </div>
           <div class="badge-row">
             <button class="badge-pill" type="button" id="shareBtn"><i class="fa-solid fa-share-nodes"></i> Share</button>
-            <a class="badge-pill" href="index.html">Back to shopping</a>
+            <a class="badge-pill" href="../index.html">Back to shopping</a>
           </div>
           <p><strong>Deliver to:</strong> ${product.delivery?.location || 'Maharashtra'}</p>
           <p><strong>Delivery charge:</strong> ${product.delivery?.free ? 'Free' : formatCurrency(product.delivery?.charge || 0)}</p>

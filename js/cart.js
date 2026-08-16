@@ -75,7 +75,7 @@ function renderCart() {
       <section class="empty-state-card" aria-live="polite">
         <h2>${CART_EMPTY_MESSAGE}</h2>
         <p>Looks like you haven't added anything to your cart yet.</p>
-        <a class="primary-btn" href="index.html">Continue Shopping</a>
+        <a class="primary-btn" href="../index.html">Continue Shopping</a>
       </section>
     `;
     return;

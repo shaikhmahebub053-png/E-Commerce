@@ -408,7 +408,7 @@ function renderConfirmation() {
       </div>
 
       <div class="inline-actions" style="justify-content: center; margin-top: 1.2rem;">
-        <a href="index.html" class="primary-btn" style="display:inline-flex; align-items:center; justify-content:center;">Continue Shopping</a>
+        <a href="../index.html" class="primary-btn" style="display:inline-flex; align-items:center; justify-content:center;">Continue Shopping</a>
         <a href="checkout.html?view=orders" class="secondary-btn" style="display:inline-flex; align-items:center; justify-content:center;">View Order</a>
       </div>
     </section>
@@ -424,7 +424,7 @@ function renderOrderHistory() {
         <div class="empty-state">
           <h3>No orders yet</h3>
           <p>Your placed orders will appear here.</p>
-          <a href="index.html" class="primary-btn" style="display:inline-flex; margin-top: 1rem; align-items:center; justify-content:center;">Continue Shopping</a>
+          <a href="../index.html" class="primary-btn" style="display:inline-flex; margin-top: 1rem; align-items:center; justify-content:center;">Continue Shopping</a>
         </div>
       </section>
     `;
@@ -509,7 +509,7 @@ function renderCheckout() {
               <h2 class="section-title">Product not found</h2>
               <p>${source.error === 'Empty cart' ? 'Your cart is empty. Add a product to continue.' : 'The selected product could not be found.'}</p>
               <div class="inline-actions">
-                <a href="index.html" class="primary-btn" style="display:inline-flex; align-items:center; justify-content:center;">Back to Shopping</a>
+                <a href="../index.html" class="primary-btn" style="display:inline-flex; align-items:center; justify-content:center;">Back to Shopping</a>
               </div>
             </section>
           </div>
