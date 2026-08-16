@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium Help Center — NEXORA.SHOP Customer Service" />
+    <meta name="theme-color" content="#131921" />
+    <title>Customer Service | NEXORA.SHOP Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/customer-service.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Reuse existing header markup to keep the site integrated -->
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP Commerce Home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <div class="delivery" role="button" tabindex="0" aria-label="Delivery details">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Delivering to</strong>
+            <span>Maharashtra,Latur  413512</span>
+          </div>
+        </div>
+
+        <form class="search-form" role="search" aria-label="Site search">
+          <label class="search-select" aria-label="Search category">
+            <select>
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+              <option>Home</option>
+              <option>Books</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="Search for products, brands and more" aria-label="Search products" />
+            <button class="voice-search" type="button" aria-label="Voice search">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+          <button class="search-btn btn-ripple" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+        </form>
+
+        <div class="header-actions">
+          <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <div class="action-item" role="button" tabindex="0" aria-label="Your orders">
+            <span class="label">Returns</span>
+            <span class="value">& Orders</span>
+          </div>
+          <a href="#" class="action-item cart-link" aria-label="Shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="value">Cart</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <button class="nav-link btn-ripple" id="allMenu" type="button">☰ All</button>
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+         <a class="nav-link btn-ripple" href="accessories.html">Accessories</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+        <a class="nav-link btn-ripple" href="about.html">About</a>
+      </nav>
+
+      <button class="mobile-menu-toggle btn-ripple" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+      <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile sidebar">
+        <button class="close-btn btn-ripple" type="button" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="todays-deals.html">Today's Deals</a></li>
+          <li><a href="best-sellers.html">Best Sellers</a></li>
+          <li><a href="fashion.html">Fashion</a></li>
+        </ul>
+      </aside>
+    </header>
+
+    <main id="main-content">
+      <section class="help-hero section-block" aria-label="Help center hero">
+        <div class="help-hero-inner">
+          <div class="help-hero-copy">
+            <p class="eyebrow">Help Center</p>
+            <h1>How can we help you?</h1>
+            <p class="muted">Find answers, manage your orders, and get support quickly.</p>
+
+            <form id="helpSearchForm" class="help-search" role="search" aria-label="Help search">
+              <input id="helpSearchInput" type="search" placeholder="Search for help, orders, returns, payments and more" aria-label="Search help" />
+              <button type="submit" class="search-btn btn-ripple" aria-label="Search help"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+          <div class="help-hero-visual" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=60" alt="Help center illustration" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block quick-help" aria-labelledby="quick-help-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Quick Help</p>
+            <h2 id="quick-help-title">Popular support topics</h2>
+          </div>
+          <a href="#">See all</a>
+        </div>
+
+        <div class="quick-help-grid">
+          <button class="support-card btn-ripple" data-target="track-order">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <h3>Track My Order</h3>
+              <p>Get real-time status for your shipment.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+
+          <button class="support-card btn-ripple" data-target="returns">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+              <h3>Returns & Refunds</h3>
+              <p>Start a return, check refund status, and policies.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+
+          <button class="support-card btn-ripple" data-target="shipping">
+            <i class="fa-solid fa-shipping-fast"></i>
+            <div>
+              <h3>Shipping & Delivery</h3>
+              <p>Delivery timelines, charges, and tracking help.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+
+          <button class="support-card btn-ripple" data-target="payments">
+            <i class="fa-solid fa-credit-card"></i>
+            <div>
+              <h3>Payment Issues</h3>
+              <p>Resolve failed payments and transaction problems.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+
+          <button class="support-card btn-ripple" data-target="cancel-order">
+            <i class="fa-solid fa-ban"></i>
+            <div>
+              <h3>Cancel My Order</h3>
+              <p>Request order cancellation before shipping.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+
+          <button class="support-card btn-ripple" data-target="account">
+            <i class="fa-solid fa-user-shield"></i>
+            <div>
+              <h3>Account & Login</h3>
+              <p>Manage sign in, security, and account details.</p>
+            </div>
+            <i class="fa-solid fa-chevron-right card-arrow"></i>
+          </button>
+        </div>
+      </section>
+
+      <section class="section-block" id="manage-orders" aria-labelledby="manage-orders-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Order Support</p>
+            <h2 id="manage-orders-title">Manage Your Orders</h2>
+          </div>
+        </div>
+
+        <div class="action-grid">
+          <a href="#" class="action-card">Track Order</a>
+          <a href="#" class="action-card">View Order Details</a>
+          <a href="#" class="action-card">Cancel Order</a>
+          <a href="#" class="action-card">Request Return</a>
+          <a href="#" class="action-card">Request Refund</a>
+          <a href="#" class="action-card">Download Invoice</a>
+        </div>
+      </section>
+
+      <section class="section-block" id="returns" aria-labelledby="returns-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Returns & Refunds</p>
+            <h2 id="returns-title">Easy, fast returns and refunds</h2>
+          </div>
+          <a href="#" class="btn btn-outline">View Return Policy</a>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h4>Easy Returns</h4>
+            <p>Initiate returns from your orders page in a few clicks.</p>
+          </article>
+          <article class="info-card">
+            <h4>Fast Refunds</h4>
+            <p>Refunds processed within 3-7 business days after approval.</p>
+          </article>
+          <article class="info-card">
+            <h4>Return Eligibility</h4>
+            <p>See which items qualify for returns and timeframes.</p>
+          </article>
+          <article class="info-card">
+            <h4>Refund Status</h4>
+            <p>Check refund progress from your order details.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" id="shipping" aria-labelledby="shipping-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shipping & Delivery</p>
+            <h2 id="shipping-title">Delivery and shipping help</h2>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+          <article class="info-card">Delivery Information</article>
+          <article class="info-card">Shipping Charges</article>
+          <article class="info-card">Estimated Delivery</article>
+          <article class="info-card">Delayed Orders</article>
+          <article class="info-card">Delivery Address</article>
+          <article class="info-card">International Shipping</article>
+        </div>
+      </section>
+
+      <section class="section-block" id="payments" aria-labelledby="payments-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Payments</p>
+            <h2 id="payments-title">Payment & transaction help</h2>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+          <article class="info-card">Payment Methods</article>
+          <article class="info-card">Payment Failed</article>
+          <article class="info-card">Refund Information</article>
+          <article class="info-card">Payment Security</article>
+          <article class="info-card">Transaction Issues</article>
+        </div>
+      </section>
+
+      <section class="section-block" id="account" aria-labelledby="account-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Account Help</p>
+            <h2 id="account-title">Account and security</h2>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+          <article class="info-card">Login Problems</article>
+          <article class="info-card">Forgot Password</article>
+          <article class="info-card">Change Account Details</article>
+          <article class="info-card">Address Management</article>
+          <article class="info-card">Wishlist Help</article>
+          <article class="info-card">Account Security</article>
+        </div>
+      </section>
+
+      <section class="section-block" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Popular Questions</p>
+            <h2 id="faq-title">Frequently asked questions</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>How can I track my order?</summary>
+            <p>Use the "Track My Order" option above or visit your Orders page to see real-time updates.</p>
+          </details>
+          <details>
+            <summary>How can I cancel an order?</summary>
+            <p>If your order hasn't shipped you may cancel from the orders page or request cancellation here.</p>
+          </details>
+          <details>
+            <summary>How do I return a product?</summary>
+            <p>Open the order, select the item and choose "Return" to start the returns flow.</p>
+          </details>
+          <details>
+            <summary>When will I receive my refund?</summary>
+            <p>Refunds are processed within 3-7 business days after approval, depending on your bank.</p>
+          </details>
+          <details>
+            <summary>What payment methods are supported?</summary>
+            <p>We accept major credit/debit cards, net banking, UPI and selected wallets.</p>
+          </details>
+          <details>
+            <summary>What should I do if my payment failed?</summary>
+            <p>Check your card details and retry, or contact your bank. You can also use another payment method.</p>
+          </details>
+          <details>
+            <summary>How can I change my delivery address?</summary>
+            <p>Update addresses in Account settings or during checkout before placing your order.</p>
+          </details>
+          <details>
+            <summary>How can I contact customer support?</summary>
+            <p>Use our Live Chat, Email Support, or Call Support options below to reach our team.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section-block contact-support" aria-labelledby="contact-support-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Still need help?</p>
+            <h2 id="contact-support-title">Contact support</h2>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <i class="fa-solid fa-comment-dots"></i>
+            <h4>Live Chat</h4>
+            <p>Chat with our agents for quick assistance.</p>
+            <button class="btn btn-primary btn-ripple">Start Chat</button>
+          </article>
+
+          <article class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email Support</h4>
+            <p>Send us an email and we'll respond within 24 hours.</p>
+            <button class="btn btn-outline btn-ripple">Email Us</button>
+          </article>
+
+          <article class="contact-card">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Call Support</h4>
+            <p>Request a callback from our support team.</p>
+            <button class="btn btn-outline btn-ripple">Request Call</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block" id="support-ticket" aria-labelledby="support-ticket-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Support Ticket</p>
+            <h2 id="support-ticket-title">Submit a request</h2>
+          </div>
+        </div>
+
+        <form id="supportForm" class="support-form">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="orderId">Order ID</label>
+          <input id="orderId" name="orderId" type="text" />
+
+          <label for="issueType">Issue Type</label>
+          <select id="issueType" name="issueType" required>
+            <option>Order Issue</option>
+            <option>Payment Issue</option>
+            <option>Delivery Issue</option>
+            <option>Return/Refund</option>
+            <option>Product Issue</option>
+            <option>Account Issue</option>
+            <option>Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <label for="attachment">Attachment (optional)</label>
+          <input id="attachment" name="attachment" type="file" />
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-ripple">Submit Request</button>
+            <div id="supportSuccess" class="support-success" role="status" aria-live="polite" hidden>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Request submitted. We'll contact you shortly.</span>
+            </div>
+          </div>
+        </form>
+
+        <p class="security-note muted">Never share your password, OTP, PIN or complete payment details with anyone claiming to be customer support.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <h3>NEXORA.SHOP Commerce</h3>
+        <p>Premium shopping essentials for modern homes, gadgets, and daily style.</p>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <a href="#">Support</a>
+        <a href="#">Returns</a>
+        <a href="#">Shipping</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Careers</a>
+      </div>
+    </footer>
+
+    <button class="back-to-top btn-ripple" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/customer-service.js"></script>
+  </body>
+</html>

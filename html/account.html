@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account | NEXORA.SHOP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="auth-page-body">
+    <div class="page-loader" aria-label="Loading page">
+      <div class="loader"></div>
+    </div>
+
+    <header class="auth-header">
+      <a href="index.html" class="logo" aria-label="NEXORA.SHOP Home">
+         <span class="logo-mark">NX</span>
+        <span class="logo-text">NEXORA.SHOP</span>
+      </a>
+    </header>
+
+    <main class="account-shell">
+      <section class="account-card">
+        <div class="auth-card-header">
+          <p class="eyebrow">Your account</p>
+          <h1 id="accountTitle">Hello, Guest</h1>
+        </div>
+
+        <div class="account-grid">
+          <div class="account-panel">
+            <h2>Profile</h2>
+            <div id="accountProfile" class="account-summary"></div>
+          </div>
+
+          <div class="account-panel">
+            <h2>Recent Orders</h2>
+            <div id="accountOrders" class="account-orders"></div>
+          </div>
+        </div>
+
+        <div class="auth-secondary-actions account-actions">
+          <a href="wishlist.html" class="secondary-btn">Wishlist</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script>
+      const accountTitle = document.getElementById('accountTitle');
+      const accountProfile = document.getElementById('accountProfile');
+      const accountOrders = document.getElementById('accountOrders');
+
+      function renderAccountPage() {
+        const user = getCurrentUser();
+        if (!user) {
+          accountTitle.textContent = 'Hello, Guest';
+          accountProfile.innerHTML = '<p>Sign in to view your profile and orders.</p>';
+          accountOrders.innerHTML = '<p>There are no saved orders yet.</p>';
+          return;
+        }
+
+        accountTitle.textContent = `Hello, ${user.name}`;
+        accountProfile.innerHTML = `
+          <p><strong>Name:</strong> ${user.name}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Mobile:</strong> ${user.mobile}</p>
+          <p><strong>Member Since:</strong> ${new Date(user.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</p>
+        `;
+
+        const orders = JSON.parse(localStorage.getItem('NEXORA.SHOP-orders') || '[]');
+        if (!orders.length) {
+          accountOrders.innerHTML = '<p>No recent orders found.</p>';
+          return;
+        }
+
+        accountOrders.innerHTML = orders.slice(0, 3).map((order) => `
+          <div class="mini-order">
+            <strong>Order #${order.orderId || '—'}</strong>
+            <span>${order.items?.length || 0} item(s)</span>
+            <small>${formatCurrency(order.total || 0)}</small>
+          </div>
+        `).join('');
+      }
+
+      renderAccountPage();
+    </script>
+  </body>
+</html>

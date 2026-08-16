@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Secure checkout and order flow for NEXORA.SHOP" />
+    <meta name="theme-color" content="#131921" />
+    <title>Checkout • NEXORA.SHOP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header class="site-header checkout-header">
+      <div class="top-header checkout-topbar">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <div class="checkout-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Secure Checkout</span>
+        </div>
+
+        <div class="checkout-meta">
+          <span class="label">Checkout</span>
+          <a href="checkout.html?view=orders" class="meta-link">Account & Orders</a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav checkout-nav" aria-label="Checkout navigation">
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="checkout-page">
+      <div id="checkoutShell" aria-live="polite"></div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/checkout.js"></script>
+  </body>
+</html>

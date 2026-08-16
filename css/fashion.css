@@ -1,0 +1,40 @@
+/* Fashion page specific styles - reuses main design tokens from style.css */
+/* Keep styles minimal and reuse existing classes */
+
+/* slightly tighter radius for hero */
+.section-block[aria-label="Fashion hero"] { padding: 22px; }
+
+/* Category visuals */
+#fashionCategoryGrid .category-card { display:flex;flex-direction:column;align-items:flex-start;gap:8px }
+#fashionCategoryGrid .category-card h3{font-size:1.05rem}
+#fashionCategoryGrid .category-card ul{display:flex;flex-wrap:wrap;gap:6px}
+#fashionCategoryGrid .category-card ul li{background:var(--surface-2);padding:6px 8px;border-radius:10px}
+
+/* Trending small product cards adjust */
+#trendingGrid .product-card img{height:160px}
+
+/* Product grid responsive tweaks to match site breakpoints */
+@media (min-width: 1100px){
+  #fashionProductsGrid{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+@media (max-width: 1080px){
+  #fashionProductsGrid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media (max-width: 780px){
+  #fashionProductsGrid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width: 480px){
+  #fashionProductsGrid{grid-template-columns:1fr;}
+}
+
+/* Quick view modal (reuses site visuals) */
+.fv-modal{position:fixed;inset:0;background:rgba(2,8,20,0.6);display:none;align-items:center;justify-content:center;z-index:1400}
+.fv-modal.show{display:flex}
+.fv-dialog{background:var(--surface);border-radius:18px;padding:18px;max-width:900px;width:96%;box-shadow:var(--shadow)}
+.fv-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fv-grid img{width:100%;height:100%;object-fit:cover}
+.fv-close{position:absolute;right:16px;top:16px;border:none;background:transparent;font-size:22px}
+
+/* small utility */
+.filter-pill{display:inline-flex;gap:8px;padding:6px 10px;border-radius:999px;background:var(--surface-2);cursor:pointer}
+.filter-pill.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#111827}

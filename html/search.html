@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results | NEXORA.SHOP</title>
+    <meta name="description" content="Search results for products, brands, categories and deals." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP Home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <form class="search-form" role="search" aria-label="Search products">
+          <label class="search-select" aria-label="Search category">
+            <select>
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+              <option>Home</option>
+              <option>Books</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input id="searchResultsInput" type="text" placeholder="Search for products, brands and more" aria-label="Search products" />
+          </div>
+          <button class="search-btn btn-ripple" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+        </form>
+
+        <div class="header-actions">
+          <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <a href="wishlist.html" class="icon-btn btn-ripple" aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </a>
+          <a href="cart.html" class="action-item cart-link" aria-label="Shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="value">Cart</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="search-page">
+      <div class="search-layout">
+        <aside class="search-sidebar">
+          <div class="filter-card">
+            <h3>Filters</h3>
+            <div class="filter-group">
+              <h4>Price</h4>
+              <label><input type="checkbox" value="0-10000" class="filter-input" /> ₹0–₹10,000</label>
+              <label><input type="checkbox" value="10000-30000" class="filter-input" /> ₹10,000–₹30,000</label>
+              <label><input type="checkbox" value="30000-60000" class="filter-input" /> ₹30,000–₹60,000</label>
+              <label><input type="checkbox" value="60000-999999" class="filter-input" /> ₹60,000+</label>
+            </div>
+            <div class="filter-group">
+              <h4>Brand</h4>
+              <div id="brandFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h4>Rating</h4>
+              <label><input type="checkbox" value="4" class="filter-input" /> 4★ & above</label>
+              <label><input type="checkbox" value="3" class="filter-input" /> 3★ & above</label>
+            </div>
+            <div class="filter-group">
+              <h4>Discount</h4>
+              <label><input type="checkbox" value="10" class="filter-input" /> 10%+</label>
+              <label><input type="checkbox" value="20" class="filter-input" /> 20%+</label>
+              <label><input type="checkbox" value="30" class="filter-input" /> 30%+</label>
+              <label><input type="checkbox" value="50" class="filter-input" /> 50%+</label>
+            </div>
+            <div class="filter-group">
+              <h4>Availability</h4>
+              <label><input type="checkbox" value="inStock" class="filter-input" /> In stock</label>
+            </div>
+          </div>
+        </aside>
+
+        <section class="search-main">
+          <div class="search-header-bar">
+            <div>
+              <p class="eyebrow">Search</p>
+              <h1 id="searchResultsTitle">Search results</h1>
+            </div>
+            <div class="search-meta">
+              <span id="resultsCount">0 products</span>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <label for="sortSelect">Sort by:</label>
+              <select id="sortSelect">
+                <option value="relevance">Relevance</option>
+                <option value="popularity">Popularity</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="discount">Discount</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="searchResultsGrid" class="product-grid search-results-grid"></div>
+          <div id="searchPagination" class="pagination"></div>
+        </section>
+      </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/search.js"></script>
+  </body>
+</html>

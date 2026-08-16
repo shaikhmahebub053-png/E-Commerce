@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact NEXORA.SHOP support and enquiries" />
+    <title>Contact Us | NEXORA.SHOP Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <!-- Reuse header -->
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo"> <span class="logo-mark">NX</span><span class="logo-text">NEXORA.SHOP</span></a>
+        <div class="delivery" role="button" tabindex="0"><i class="fa-solid fa-location-dot"></i><div><strong>Delivering to</strong><span>Maharashtra,Latur  413512</span></div></div>
+        <form class="search-form" role="search"><label class="search-select"><select><option>All</option><option>Electronics</option><option>Fashion</option></select></label><div class="search-input-wrap"><input type="text" placeholder="Search for products, brands and more" aria-label="Search products" /><button class="voice-search" type="button"><i class="fa-solid fa-microphone"></i></button></div><button class="search-btn btn-ripple" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button><ul class="search-suggestions" role="listbox"></ul></form>
+        <div class="header-actions"><button class="icon-btn dark-mode-toggle btn-ripple"><i class="fa-solid fa-moon"></i></button><button class="icon-btn btn-ripple"><i class="fa-regular fa-heart"></i></button><button class="icon-btn btn-ripple"><i class="fa-regular fa-bell"></i></button><div class="action-item"><span class="label">Returns</span><span class="value">& Orders</span></div><a class="action-item cart-link" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count">0</span><span class="value">Cart</span></a></div>
+      </div>
+      <nav class="secondary-nav"><button class="nav-link btn-ripple" id="allMenu">☰ All</button><a class="nav-link btn-ripple" href="index.html">Home</a><a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a><a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a><a class="nav-link btn-ripple" href="fashion.html">Fashion</a><a class="nav-link btn-ripple" href="electronics.html">Electronics</a><a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a><a class="nav-link btn-ripple active" href="contact.html">Contact</a><a class="nav-link btn-ripple" href="about.html">About</a></nav>
+    </header>
+
+    <main id="main-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </nav>
+
+      <section class="section-block contact-hero">
+        <div style="display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:center">
+          <div>
+            <p class="eyebrow">Get in Touch</p>
+            <h1>Get in Touch With Us</h1>
+            <p class="muted">We're here to help. Have a question about an order, product, payment or anything else? Contact our team.</p>
+            <div style="margin-top:12px;display:flex;gap:10px">
+              <a class="btn-primary btn-ripple" href="customer-service.html">Contact Support</a>
+              <a class="btn-outline btn-ripple" href="customer-service.html">View Help Center</a>
+            </div>
+          </div>
+          <div><img src="https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=900&q=60" alt="Contact visual" style="width:100%;height:260px;object-fit:cover;border-radius:12px"/></div>
+        </div>
+      </section>
+
+      <section class="section-block contact-cards">
+        <div class="section-heading"><div><p class="eyebrow">Contact</p><h2>Contact Information</h2></div></div>
+        <div class="quick-grid">
+          <article class="info-card"><i class="fa-solid fa-headset"></i><h4>Customer Support</h4><p>We can help with orders, returns and product questions.</p><button class="btn btn-primary btn-ripple">Start Support</button></article>
+          <article class="info-card"><i class="fa-solid fa-envelope"></i><h4>Email Support</h4><p>Send us your questions. Placeholder: support@example.com</p><button class="btn btn-outline btn-ripple">Email Us</button></article>
+          <article class="info-card"><i class="fa-solid fa-briefcase"></i><h4>Business Enquiries</h4><p>Partner and seller enquiries.</p><button class="btn btn-outline btn-ripple">Enquire</button></article>
+          <article class="info-card"><i class="fa-solid fa-box"></i><h4>Order Support</h4><p>Questions about tracking, delivery, and refunds.</p><button class="btn btn-primary btn-ripple">Manage Orders</button></article>
+        </div>
+      </section>
+
+      <section class="section-block" id="contact-form-section">
+        <div class="section-heading"><div><p class="eyebrow">Message Us</p><h2>Contact Form</h2></div></div>
+        <form id="contactForm" class="support-form">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text" required />
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" />
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required />
+
+          <label for="orderId">Order ID</label>
+          <input id="orderId" name="orderId" type="text" />
+
+          <label for="reason">Reason for Contact</label>
+          <select id="reason" name="reason" required>
+            <option>Order Issue</option>
+            <option>Payment Issue</option>
+            <option>Delivery Issue</option>
+            <option>Return / Refund</option>
+            <option>Product Question</option>
+            <option>Account Issue</option>
+            <option>Business Enquiry</option>
+            <option>Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <div class="form-actions"><button type="submit" class="btn btn-primary btn-ripple">Send Message</button><div id="contactFeedback" class="support-success" hidden></div></div>
+        </form>
+      </section>
+
+      <section class="section-block contact-options">
+        <div class="section-heading"><div><p class="eyebrow">Support</p><h2>Customer Support Options</h2></div></div>
+        <div class="contact-grid">
+          <article class="contact-card"><i class="fa-solid fa-comments"></i><h4>Live Chat</h4><p>Chat with our agents for instant help.</p><button class="btn btn-primary btn-ripple">Start Chat</button></article>
+          <article class="contact-card"><i class="fa-solid fa-envelope"></i><h4>Email Support</h4><p>We reply within 24 hours.</p><button class="btn btn-outline btn-ripple">Email</button></article>
+          <article class="contact-card"><i class="fa-solid fa-phone"></i><h4>Call Support</h4><p>Request a callback.</p><button class="btn btn-outline btn-ripple">Request Call</button></article>
+          <article class="contact-card"><i class="fa-solid fa-book"></i><h4>Help Center</h4><p>Search FAQs and guides.</p><a class="btn btn-outline btn-ripple" href="customer-service.html">Visit Help Center</a></article>
+        </div>
+      </section>
+
+      <section class="section-block" id="contact-faq">
+        <div class="section-heading"><div><p class="eyebrow">FAQ</p><h2>Frequently Asked Questions</h2></div></div>
+        <div class="faq-list">
+          <details><summary>How can I track my order?</summary><p>Use the Track Order option in your Orders page or quick actions above.</p></details>
+          <details><summary>How can I cancel my order?</summary><p>Orders can be canceled from your Orders page if they haven't shipped yet.</p></details>
+          <details><summary>How do I request a return?</summary><p>Open the order, select the item, and choose "Return" to start the process.</p></details>
+          <details><summary>How long does a refund take?</summary><p>Refunds typically take 3-7 business days after approval.</p></details>
+          <details><summary>How can I update my account?</summary><p>Update account details via Account & Lists in the header.</p></details>
+          <details><summary>How can I contact customer support?</summary><p>Use Live Chat, Email Support, or Request a Call from this page.</p></details>
+        </div>
+      </section>
+
+      <section class="section-block visit-us">
+        <div class="section-heading"><div><p class="eyebrow">Visit Us</p><h2>Visit Us</h2></div></div>
+        <div style="display:grid;grid-template-columns:1fr 420px;gap:12px;align-items:start">
+          <div>
+            <p class="muted">Address placeholder</p>
+            <p class="muted">Business hours: Mon–Fri 9:00–18:00</p>
+            <p class="muted">Note: This is a placeholder location.</p>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px;display:grid;place-items:center">
+            <div style="width:100%;height:180px;background:linear-gradient(180deg,#f3f4f6,#fff);border-radius:8px;display:grid;place-items:center;color:var(--muted)">Map placeholder</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block newsletter-card">
+        <div>
+          <p class="eyebrow">Stay connected</p>
+          <h3>Subscribe to our newsletter</h3>
+        </div>
+        <form class="newsletter-form"><input type="email" placeholder="Enter your email" /><button class="btn btn-primary btn-ripple">Subscribe</button></form>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div><h3>NEXORA.SHOP Commerce</h3><p>Premium shopping essentials for modern homes, gadgets, and daily style.</p></div>
+      <div><h4>Customer Care</h4><a href="#">Support</a><a href="#">Returns</a><a href="#">Shipping</a></div>
+      <div><h4>Quick Links</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="#">Careers</a></div>
+    </footer>
+
+    <button class="back-to-top btn-ripple" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/contact.js"></script>
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore premium deals, flash offers, and limited-time discounts on NEXORA.SHOP Commerce." />
+    <meta name="theme-color" content="#131921" />
+    <title>Today's Deals | NEXORA.SHOP Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/todays-deals.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="page-loader" aria-label="Loading page">
+      <div class="loader"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP Commerce Home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <div class="delivery" role="button" tabindex="0" aria-label="Delivery details">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Delivering to</strong>
+            <span>Maharashtra,Latur  413512</span>
+          </div>
+        </div>
+
+        <form class="search-form" role="search" aria-label="Site search">
+          <label class="search-select" aria-label="Search category">
+            <select>
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+              <option>Home</option>
+              <option>Books</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="Search for products, brands and more" aria-label="Search products" />
+            <button class="voice-search" type="button" aria-label="Voice search">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+          <button class="search-btn btn-ripple" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+        </form>
+
+        <div class="header-actions">
+          <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <div class="action-item" role="button" tabindex="0" aria-label="Account and lists">
+            <span class="label">Returns</span>
+            <span class="value">& Orders</span>
+          </div>
+          <a href="#" class="action-item cart-link" aria-label="Shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="value">Cart</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <button class="nav-link btn-ripple" type="button">☰ All</button>
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple active" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+        <!-- <a class="nav-link btn-ripple" href="#">Mobiles</a> -->
+        <!-- <a class="nav-link btn-ripple" href="#">Computers</a> -->
+        <!-- <a class="nav-link btn-ripple" href="#">Gaming</a> -->
+          <a class="nav-link btn-ripple" href="accessories.html">Accessories</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+        <a class="nav-link btn-ripple" href="about.html">About</a>
+      </nav>
+
+      <button class="mobile-menu-toggle btn-ripple" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+      <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile sidebar">
+        <button class="close-btn btn-ripple" type="button" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="todays-deals.html">Today's Deals</a></li>
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">Electronics</a></li>
+          <li><button type="button" class="dark-mode-toggle">Toggle Theme</button></li>
+        </ul>
+      </aside>
+    </header>
+
+    <main id="main-content" class="deals-page">
+      <section class="deals-hero" aria-label="Today's deals hero">
+        <nav class="deals-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Today's Deals</span>
+        </nav>
+
+        <div class="hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">Limited Time Event</p>
+            <h1>Today's Mega Deals</h1>
+            <p class="hero-text">Save up to 80% on carefully selected electronics, fashion, home, and tech essentials.</p>
+            <div class="hero-actions">
+              <a href="#flashDeals" class="btn btn-primary btn-ripple">Shop Now</a>
+              <a href="#featuredDeals" class="btn btn-outline btn-ripple">View Featured</a>
+            </div>
+            <div class="hero-timer" id="heroCountdown" aria-label="Hero countdown"></div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="offer-pill">Up to 80% OFF</div>
+            <div class="visual-stack">
+              <div class="mini-card"><i class="fa-solid fa-bolt"></i></div>
+              <div class="mini-card accent"><i class="fa-solid fa-gift"></i></div>
+              <div class="mini-card"><i class="fa-solid fa-shipping-fast"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="flashDeals" aria-labelledby="flash-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Flash Sale</p>
+            <h2 id="flash-title">Flash Deals</h2>
+          </div>
+          <a href="#">See All</a>
+        </div>
+
+        <div class="category-pill-row" id="categoryPills"></div>
+
+        <div class="filter-bar">
+          <label class="filter-control">
+            <span>Sort</span>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="discount">Highest Discount</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Price</span>
+            <select id="priceFilter">
+              <option value="all">All</option>
+              <option value="below-100">Below $100</option>
+              <option value="100-300">$100 - $300</option>
+              <option value="300-700">$300 - $700</option>
+              <option value="700-plus">$700+</option>
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Brand</span>
+            <select id="brandFilter">
+              <option value="all">All</option>
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Discount</span>
+            <select id="discountFilter">
+              <option value="all">All</option>
+              <option value="10">10%+</option>
+              <option value="20">20%+</option>
+              <option value="30">30%+</option>
+              <option value="50">50%+</option>
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Rating</span>
+            <select id="ratingFilter">
+              <option value="all">All</option>
+              <option value="4">4★ & Up</option>
+              <option value="4.5">4.5★ & Up</option>
+            </select>
+          </label>
+
+          <label class="filter-control">
+            <span>Availability</span>
+            <select id="availabilityFilter">
+              <option value="all">All</option>
+              <option value="in-stock">In Stock</option>
+              <option value="limited">Limited</option>
+            </select>
+          </label>
+
+          <label class="filter-control search-control">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Search deals" aria-label="Search deals" />
+          </label>
+        </div>
+
+        <div class="product-grid" id="dealGrid" aria-live="polite"></div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+
+      <section class="promo-banner" aria-label="Weekend sale promotion">
+        <div>
+          <p class="eyebrow">Weekend Mega Sale</p>
+          <h3>Extra 20% OFF</h3>
+          <p>Use coupon code <strong>TODAY20</strong> at checkout for your next order.</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-ripple">Claim Offer</a>
+      </section>
+
+      <section class="section-block" aria-labelledby="brands-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Trusted by customers</p>
+            <h2 id="brands-title">Top Brands</h2>
+          </div>
+          <a href="#">Discover Brands</a>
+        </div>
+        <div class="brand-row" id="brandRow"></div>
+      </section>
+
+      <section class="section-block" id="featuredDeals" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Curated Picks</p>
+            <h2 id="featured-title">Featured Deals</h2>
+          </div>
+          <a href="#">View More</a>
+        </div>
+        <div class="featured-grid">
+          <article class="featured-card featured-card-large">
+            <p class="eyebrow">Best Deal</p>
+            <h3>Smart Home Bundle</h3>
+            <p>Save on premium lighting, speakers, and automation accessories.</p>
+            <div class="deal-tags">
+              <span>Free Delivery</span>
+              <span>4.9 Rating</span>
+            </div>
+          </article>
+          <article class="featured-card">
+            <p class="eyebrow">Editor’s Choice</p>
+            <h3>Style Edit</h3>
+            <p>New arrivals with luxe essentials and elevated comfort.</p>
+          </article>
+          <article class="featured-card">
+            <p class="eyebrow">Most Popular</p>
+            <h3>Tech Refresh</h3>
+            <p>Performance gear that brings precision and power.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="newsletter-card" aria-labelledby="newsletter-title">
+        <div>
+          <p class="eyebrow">Stay ahead</p>
+          <h3 id="newsletter-title">Subscribe to our premium deals newsletter</h3>
+          <p>Get first access to handpicked offers, flash events, and member-only rewards.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" type="email" placeholder="Enter your email" />
+          <button class="btn btn-primary btn-ripple" type="submit">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <button class="back-to-top btn-ripple" id="backToTop" type="button" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/todays-deals.js"></script>
+  </body>
+</html>

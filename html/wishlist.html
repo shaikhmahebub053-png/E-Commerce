@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Wishlist for NEXORA.SHOP" />
+    <meta name="theme-color" content="#131921" />
+    <title>My Wishlist • NEXORA.SHOP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/wishlist.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <div class="delivery" role="button" tabindex="0" aria-label="Delivery details">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Delivering to</strong>
+            <span>Maharashtra, Latur 413512</span>
+          </div>
+        </div>
+
+        <form class="search-form" role="search" aria-label="Site search">
+          <label class="search-select" aria-label="Search category">
+            <select>
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="Search for products, brands and more" aria-label="Search products" />
+            <button class="voice-search" type="button" aria-label="Voice search"><i class="fa-solid fa-microphone"></i></button>
+          </div>
+          <button class="search-btn btn-ripple" type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+        </form>
+
+        <div class="header-actions">
+          <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+          <button class="icon-btn btn-ripple wishlist-link" aria-label="Wishlist">
+            <i class="fa-solid fa-heart"></i>
+            <span class="wishlist-count">0</span>
+          </button>
+          <a href="cart.html" class="action-item cart-link" aria-label="Shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="value">Cart</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+        <a class="nav-link btn-ripple" href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="wishlist-page-shell">
+      <div id="wishlistShell" aria-live="polite"></div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/wishlist.js"></script>
+  </body>
+</html>

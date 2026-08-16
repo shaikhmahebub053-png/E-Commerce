@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Electronics • NEXORA.SHOP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/electronics.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Reuse site header exactly to preserve navbar, logo, search, cart -->
+  <header class="site-header">
+    <div class="top-header ">
+      <a href="index.html" class="logo" aria-label="NEXORA.SHOP Commerce Home">
+         <span class="logo-mark">NX</span>
+        <span class="logo-text">NEXORA.SHOP</span>
+      </a>
+
+      <div class="delivery" role="button" tabindex="0" aria-label="Delivery details">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <strong>Delivering to</strong>
+          <span>Maharashtra,Latur  413512</span>
+        </div>
+      </div>
+
+      <form class="search-form" role="search" aria-label="Site search">
+        <label class="search-select" aria-label="Search category">
+          <select>
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+            <option>Home</option>
+            <option>Books</option>
+          </select>
+        </label>
+        <div class="search-input-wrap">
+          <input type="text" placeholder="Search for products, brands and more" aria-label="Search products">
+          <button class="voice-search" type="button" aria-label="Voice search">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+        </div>
+        <button class="search-btn btn-ripple" type="submit" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+      </form>
+
+      <div class="header-actions">
+        <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="icon-btn btn-ripple" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+        <button class="icon-btn btn-ripple" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+        <div class="action-item" role="button" tabindex="0" aria-label="Your orders">
+          <span class="label">Returns</span>
+          <span class="value">& Orders</span>
+        </div>
+        <a href="#" class="action-item cart-link" aria-label="Shopping cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count">0</span>
+          <span class="value">Cart</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="secondary-nav" aria-label="Secondary navigation">
+      <button class="nav-link btn-ripple" id="allMenu" type="button">☰ All</button>
+      <a class="nav-link btn-ripple" href="index.html">Home</a>
+      <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+      <a class="nav-link btn-ripple" href="best-sellers.html">Best Sellers</a>
+      <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+      <a class="nav-link btn-ripple active" href="electronics.html">Electronics</a>
+      <!-- <a class="nav-link btn-ripple" href="#">Mobiles</a> -->
+      <!-- <a class="nav-link btn-ripple" href="#">Computers</a> -->
+      <!-- <a class="nav-link btn-ripple" href="#">Gaming</a> -->
+        <a class="nav-link btn-ripple" href="accessories.html">Accessories</a>
+      <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+      <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+      <a class="nav-link btn-ripple" href="about.html">About</a>
+
+      <div class="mega-dropdown" id="megaDropdown" role="region" aria-label="Mega menu">
+        <div class="mega-columns">
+          <div class="mega-group">
+            <h4>Electronics</h4>
+            <ul>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Phones</a></li>
+              <li><a href="#">Audio</a></li>
+            </ul>
+          </div>
+          <div class="mega-group">
+            <h4>Fashion</h4>
+            <ul>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">Footwear</a></li>
+            </ul>
+          </div>
+          <div class="mega-group">
+            <h4>Home</h4>
+            <ul>
+              <li><a href="#">Decor</a></li>
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Lighting</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <button class="mobile-menu-toggle btn-ripple" type="button" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile sidebar">
+      <button class="close-btn btn-ripple" type="button" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="mobile-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="todays-deals.html">Today's Deals</a></li>
+        <li><a href="best-sellers.html">Best Sellers</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="fashion.html">Fashion</a></li>
+        <li><button type="button" class="dark-mode-toggle">Toggle Theme</button></li>
+      </ul>
+    </aside>
+  </header>
+
+  <main id="main-content">
+    <div class="content-shell" style="max-width:1200px;margin:24px auto;">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:12px;color:var(--muted)">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Electronics</li>
+        </ol>
+      </nav>
+
+      <!-- Hero -->
+      <section class="section-block" aria-label="Electronics hero">
+        <div style="display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center">
+          <div>
+            <p class="eyebrow">NEXT-GEN ELECTRONICS</p>
+            <h2 style="font-size:2rem;margin-top:6px">Upgrade Your Digital Life</h2>
+            <p style="color:var(--muted);margin-top:8px">Discover smartphones, laptops, gaming devices, audio products, smart gadgets and more.</p>
+            <div style="margin-top:14px;display:flex;gap:12px">
+              <a class="btn-primary btn-ripple" href="#products">Shop Electronics</a>
+              <a class="btn-ripple" href="#deals">Explore Deals</a>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <span class="slide-badge">NEW ARRIVALS</span>
+              <span class="slide-badge">UP TO 60% OFF</span>
+              <span class="slide-badge">TOP TECHNOLOGY</span>
+            </div>
+          </div>
+          <div style="border-radius:18px;overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" alt="Electronics hero" style="width:100%;height:320px;object-fit:cover;display:block">
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="section-block" aria-label="Electronics categories" id="electronicsCategories" style="margin-top:18px">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Browse</p>
+            <h2>Electronics Categories</h2>
+          </div>
+          <a href="#">View All</a>
+        </div>
+        <div class="category-grid" id="electronicsCategoryGrid"></div>
+      </section>
+
+      <!-- Trending -->
+      <section class="section-block" style="margin-top:18px">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Hot</p>
+            <h2>Trending Electronics</h2>
+          </div>
+          <a href="#">See all trending</a>
+        </div>
+        <div class="product-grid" id="trendingElectronics"></div>
+      </section>
+
+      <!-- Filters + Listing -->
+      <section style="display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:18px;align-items:start" id="products">
+        <aside>
+          <div class="section-block">
+            <h3>Filters</h3>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">Search</label>
+              <input id="electronicsSearch" type="search" placeholder="Search electronics" style="width:100%;padding:10px;border-radius:12px;border:1px solid var(--border)">
+            </div>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">Category</label>
+              <div id="eFilterCategory"></div>
+            </div>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">Brand</label>
+              <div id="eFilterBrand"></div>
+            </div>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">Price</label>
+              <div id="eFilterPrice"></div>
+            </div>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">RAM</label>
+              <div id="eFilterRam"></div>
+            </div>
+            <div style="margin-top:12px">
+              <label style="display:block;font-weight:700;margin-bottom:8px">Storage</label>
+              <div id="eFilterStorage"></div>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button id="eApplyFilters" class="btn-primary btn-ripple">Apply</button>
+              <button id="eClearFilters" class="btn-ripple">Clear</button>
+            </div>
+          </div>
+        </aside>
+
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div>
+              <label class="sr-only" for="electronicsSort">Sort</label>
+              <select id="electronicsSort" style="padding:8px;border-radius:10px;border:1px solid var(--border)">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="best-selling">Best Selling</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="discount">Biggest Discount</option>
+              </select>
+            </div>
+            <div>
+              <label class="sr-only" for="ePerPage">Show</label>
+              <select id="ePerPage" style="padding:8px;border-radius:10px;border:1px solid var(--border)">
+                <option value="12">12</option>
+                <option value="24" selected>24</option>
+                <option value="48">48</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-grid" id="electronicsProductsGrid"></div>
+
+          <div style="margin-top:14px;text-align:center" id="electronicsPagination"></div>
+        </div>
+      </section>
+
+      <!-- Recently viewed and newsletter -->
+      <section class="section-block" style="margin-top:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div>
+            <p class="eyebrow">Recently</p>
+            <h3>Recently Viewed</h3>
+          </div>
+          <div id="recentlyViewed" style="display:flex;gap:12px;overflow:auto"></div>
+        </div>
+      </section>
+
+      <section class="section-block" style="margin-top:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div>
+            <p class="eyebrow">Stay Updated</p>
+            <h3>Electronics Newsletter</h3>
+            <p style="color:var(--muted)">Deals, launches, and insider tech tips.</p>
+          </div>
+          <form id="electronicsNewsletter" style="display:flex;gap:8px">
+            <input type="email" placeholder="Email address" required style="padding:10px;border-radius:12px;border:1px solid var(--border)">
+            <button class="btn-primary btn-ripple" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h3>NEXORA.SHOP Commerce</h3>
+      <p>Premium shopping essentials for modern homes, gadgets, and daily style.</p>
+    </div>
+    <div>
+      <h4>Customer Care</h4>
+      <a href="#">Support</a>
+      <a href="#">Returns</a>
+      <a href="#">Shipping</a>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Careers</a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/electronics.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium Best Sellers collection for NEXORA.SHOP Commerce with curated top-rated products, featured brands, reviews, and modern shopping experiences." />
+    <meta name="theme-color" content="#131921" />
+    <title>Best Sellers | NEXORA.SHOP Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/best-sellers.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <div class="page-loader" aria-label="Loading page">
+      <div class="loader"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="top-header">
+        <a href="index.html" class="logo" aria-label="NEXORA.SHOP Commerce Home">
+           <span class="logo-mark">NX</span>
+          <span class="logo-text">NEXORA.SHOP</span>
+        </a>
+
+        <div class="delivery" role="button" tabindex="0" aria-label="Delivery details">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Delivering to</strong>
+            <span>Maharashtra,Latur  413512</span>
+          </div>
+        </div>
+
+        <form class="search-form" role="search" aria-label="Site search">
+          <label class="search-select" aria-label="Search category">
+            <select>
+              <option>All</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+              <option>Home</option>
+              <option>Books</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="Search for products, brands and more" aria-label="Search products" />
+            <button class="voice-search" type="button" aria-label="Voice search">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+          <button class="search-btn btn-ripple" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="search-suggestions" role="listbox" aria-label="Search suggestions"></ul>
+        </form>
+
+        <div class="header-actions">
+          <button class="icon-btn dark-mode-toggle btn-ripple" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <button class="icon-btn btn-ripple" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <div class="action-item" role="button" tabindex="0" aria-label="Your orders">
+            <span class="label">Returns</span>
+            <span class="value">& Orders</span>
+          </div>
+          <a href="#" class="action-item cart-link" aria-label="Shopping cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+            <span class="value">Cart</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="secondary-nav" aria-label="Secondary navigation">
+        <button class="nav-link btn-ripple" id="allMenu" type="button">☰ All</button>
+        <a class="nav-link btn-ripple" href="index.html">Home</a>
+        <a class="nav-link btn-ripple" href="todays-deals.html">Today's Deals</a>
+        <a class="nav-link btn-ripple active" href="best-sellers.html">Best Sellers</a>
+        <a class="nav-link btn-ripple" href="fashion.html">Fashion</a>
+        <a class="nav-link btn-ripple" href="electronics.html">Electronics</a>
+        <!-- <a class="nav-link btn-ripple" href="#">Mobiles</a> -->
+        <!-- <a class="nav-link btn-ripple" href="#">Computers</a> -->
+        <!-- <a class="nav-link btn-ripple" href="#">Gaming</a> -->
+          <a class="nav-link btn-ripple" href="accessories.html">Accessories</a>
+        <a class="nav-link btn-ripple" href="customer-service.html">Customer Service</a>
+        <a class="nav-link btn-ripple" href="contact.html">Contact</a>
+        <a class="nav-link btn-ripple" href="about.html">About</a>
+
+        <div class="mega-dropdown" id="megaDropdown" role="region" aria-label="Mega menu">
+          <div class="mega-columns">
+            <div class="mega-group">
+              <h4>Electronics</h4>
+              <ul>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Phones</a></li>
+                <li><a href="#">Audio</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <h4>Fashion</h4>
+              <ul>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Footwear</a></li>
+              </ul>
+            </div>
+            <div class="mega-group">
+              <h4>Home</h4>
+              <ul>
+                <li><a href="#">Decor</a></li>
+                <li><a href="#">Furniture</a></li>
+                <li><a href="#">Lighting</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-toggle btn-ripple" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="mobile-overlay" id="mobileOverlay"></div>
+      <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile sidebar">
+        <button class="close-btn btn-ripple" type="button" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="mobile-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="todays-deals.html">Today's Deals</a></li>
+          <li><a href="best-sellers.html">Best Sellers</a></li>
+          <li><button type="button" class="dark-mode-toggle">Toggle Theme</button></li>
+        </ul>
+      </aside>
+    </header>
+
+    <main id="main-content">
+      <section class="best-sellers-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Best Sellers</span>
+        </nav>
+
+        <section class="page-hero" aria-label="Best sellers hero">
+          <div class="page-hero__content">
+            <p class="eyebrow">Best Sellers 2026</p>
+            <h1>Discover the most-loved essentials picked by thousands of customers.</h1>
+            <p>From premium tech to elevated living, every product below combines timeless design, verified value, and remarkable reviews.</p>
+            <div class="page-hero__actions">
+              <a class="btn-primary btn-ripple" href="#catalog">Shop Best Sellers</a>
+              <a class="btn-secondary btn-ripple" href="#categories">Explore Categories</a>
+            </div>
+            <div class="hero-badges">
+              <span>⭐ Top Rated</span>
+              <span>🔥 Trending</span>
+              <span>🏆 Best Choice</span>
+            </div>
+          </div>
+          <div class="page-hero__visual" aria-hidden="true">
+            <div class="hero-illustration">
+              <div class="hero-card hero-card--main">
+                <div class="hero-card__badge">Premium Picks</div>
+                <h3>Fast delivery. Premium quality.</h3>
+                <p>Curated for modern lifestyles and daily rituals.</p>
+              </div>
+              <div class="hero-card hero-card--floating">
+                <i class="fa-solid fa-star"></i>
+                <span>4.9/5</span>
+              </div>
+              <div class="hero-card hero-card--small">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Express shipping</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block" id="categories" aria-labelledby="category-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Top Categories</p>
+              <h2 id="category-heading">Browse the most popular categories</h2>
+            </div>
+          </div>
+          <div class="category-chips" id="categoryChips"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="top-selling-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Trending Best Sellers</p>
+              <h2 id="top-selling-heading">Top selling picks this week</h2>
+            </div>
+          </div>
+          <div class="rank-grid" id="rankGrid"></div>
+        </section>
+
+        <section class="section-block" id="catalog" aria-labelledby="catalog-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Complete Collection</p>
+              <h2 id="catalog-heading">Best seller product grid</h2>
+            </div>
+            <p class="section-muted">Over 32 premium products and counting</p>
+          </div>
+          <div class="product-grid" id="bestSellerProductGrid"></div>
+          <div class="pagination" id="pagination"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="brands-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Featured Brands</p>
+              <h2 id="brands-heading">Beloved by discerning shoppers</h2>
+            </div>
+          </div>
+          <div class="brand-slider">
+            <button class="slider-nav prev" type="button" aria-label="Scroll brands left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="brand-track" id="brandTrack"></div>
+            <button class="slider-nav next" type="button" aria-label="Scroll brands right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="perks-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Why Customers Love These Products</p>
+              <h2 id="perks-heading">Premium experiences built into every order</h2>
+            </div>
+          </div>
+          <div class="perks-grid">
+            <article class="perk-card">
+              <i class="fa-solid fa-medal"></i>
+              <h3>High Ratings</h3>
+              <p>Average customer ratings consistently above 4.7 out of 5.</p>
+            </article>
+            <article class="perk-card">
+              <i class="fa-solid fa-truck-fast"></i>
+              <h3>Fast Delivery</h3>
+              <p>Priority dispatch and express shipping for the hottest picks.</p>
+            </article>
+            <article class="perk-card">
+              <i class="fa-solid fa-shield-check"></i>
+              <h3>Verified Reviews</h3>
+              <p>Every review is checked for authenticity and quality signals.</p>
+            </article>
+            <article class="perk-card">
+              <i class="fa-solid fa-tags"></i>
+              <h3>Best Value</h3>
+              <p>Competitive pricing, bundle savings, and premium craftsmanship.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block" aria-labelledby="reviews-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Customer Reviews</p>
+              <h2 id="reviews-heading">Loved by shoppers around the world</h2>
+            </div>
+          </div>
+          <div class="reviews-grid" id="reviewsGrid"></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="recent-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Recently Viewed</p>
+              <h2 id="recent-heading">Pick up where you left off</h2>
+            </div>
+          </div>
+          <div class="recent-slider">
+            <button class="slider-nav prev recent-prev" type="button" aria-label="Scroll recent items left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="recent-track" id="recentTrack"></div>
+            <button class="slider-nav next recent-next" type="button" aria-label="Scroll recent items right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <section class="newsletter-section" aria-label="Newsletter signup">
+          <div>
+            <p class="eyebrow">Stay in the loop</p>
+            <h3>Get first access to premium drops, member offers, and curated picks.</h3>
+          </div>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+            <button class="btn-primary btn-ripple" type="submit">Subscribe</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <h3>NEXORA.SHOP Commerce</h3>
+        <p>Premium shopping essentials for modern homes, gadgets, and daily style.</p>
+      </div>
+      <div>
+        <h4>Customer Care</h4>
+        <a href="#">Support</a>
+        <a href="#">Returns</a>
+        <a href="#">Shipping</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Careers</a>
+      </div>
+    </footer>
+
+    <button class="back-to-top btn-ripple" id="backToTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/best-sellers.js"></script>
+  </body>
+</html>

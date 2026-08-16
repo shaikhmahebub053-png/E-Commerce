@@ -1,0 +1,12 @@
+/* About page styles reusing site tokens */
+.about-hero .muted { color: var(--muted); }
+.our-story img { border-radius:12px; box-shadow:var(--shadow); }
+.quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.9rem; }
+.info-card { padding:1rem; border-radius:12px; background:var(--surface); border:1px solid var(--border); box-shadow:0 10px 24px rgba(15,23,42,0.06); }
+.category-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:0.7rem; }
+.timeline-step { padding:0.8rem 1rem; background:var(--surface); border-radius:10px; border:1px solid var(--border); }
+.stats .action-card { text-align:center; }
+.stat-count { font-size:1.6rem; color:var(--accent-2); }
+
+@media (max-width:1080px){ .quick-grid{grid-template-columns:repeat(2,1fr);} .category-grid{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:780px){ .quick-grid{grid-template-columns:1fr;} .category-grid{grid-template-columns:1fr;} }
