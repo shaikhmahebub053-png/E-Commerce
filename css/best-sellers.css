@@ -733,8 +733,11 @@ body.dark-mode .newsletter-section {
   }
 
   .rank-grid,
-  .product-grid,
   .perks-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -753,10 +756,14 @@ body.dark-mode .newsletter-section {
   }
 
   .rank-grid,
-  .product-grid,
   .perks-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .brand-slider {

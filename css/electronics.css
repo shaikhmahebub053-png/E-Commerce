@@ -20,10 +20,13 @@
   #electronicsProductsGrid{grid-template-columns:repeat(3,minmax(0,1fr));}
 }
 @media (max-width: 780px){
-  #electronicsProductsGrid{grid-template-columns:repeat(2,1fr);}
+  #electronicsProductsGrid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px;}
 }
 @media (max-width: 480px){
-  #electronicsProductsGrid{grid-template-columns:1fr;}
+  #electronicsProductsGrid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px;}
+  #electronicsProductsGrid .product-card img{height:130px}
+  #electronicsProductsGrid .product-card .product-body{padding:8px}
+  #electronicsProductsGrid .product-card h4{font-size:0.7rem;overflow-wrap:anywhere}
 }
 
 /* Quick view modal */
