@@ -1081,57 +1081,7 @@ body.dark-mode .section-block {
 }
 
 .search-layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: start;
-}
-
-.search-sidebar {
-  position: sticky;
-  top: 96px;
-}
-
-.filter-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  padding: 1rem;
-}
-
-.filter-card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.filter-group {
-  border-top: 1px solid var(--border);
-  padding-top: 0.9rem;
-  margin-top: 0.9rem;
-}
-
-.filter-group h4 {
-  font-size: 0.84rem;
-  margin-bottom: 0.7rem;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.filter-group label {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 0.6rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.filter-group input {
-  accent-color: var(--accent-2);
+  display: block;
 }
 
 .search-main {

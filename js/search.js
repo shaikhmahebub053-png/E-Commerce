@@ -6,12 +6,9 @@ const searchTitle = document.getElementById('searchResultsTitle');
 const paginationEl = document.getElementById('searchPagination');
 const sortSelect = document.getElementById('sortSelect');
 const filterInputs = document.querySelectorAll('.filter-input');
-const brandFilters = document.getElementById('brandFilters');
 
 let currentPage = 1;
 let activeFilters = {
-  price: [],
-  brand: [],
   rating: [],
   discount: [],
   inStock: false
@@ -39,22 +36,15 @@ function getSearchMatches(query) {
 
 function applyFilters(items) {
   const filtered = items.filter((product) => {
-    const price = Number(product.price || 0);
     const rating = Number(product.rating || 0);
     const discount = Number(product.discount || 0);
     const inStock = Number(product.stock || 0) > 0;
 
-    const priceOk = !activeFilters.price.length || activeFilters.price.some((rule) => {
-      const [min, max] = rule.split('-').map(Number);
-      return price >= min && price <= max;
-    });
-
-    const brandOk = !activeFilters.brand.length || activeFilters.brand.includes(product.brand);
     const ratingOk = !activeFilters.rating.length || activeFilters.rating.some((threshold) => rating >= Number(threshold));
     const discountOk = !activeFilters.discount.length || activeFilters.discount.some((threshold) => discount >= Number(threshold));
     const stockOk = !activeFilters.inStock || inStock;
 
-    return priceOk && brandOk && ratingOk && discountOk && stockOk;
+    return ratingOk && discountOk && stockOk;
   });
 
   return filtered;
@@ -134,26 +124,6 @@ function buildResultCard(product) {
       </div>
     </article>
   `;
-}
-
-function renderBrandFilters(products) {
-  const brands = [...new Set(products.map((product) => product.brand).filter(Boolean))].sort();
-  brandFilters.innerHTML = brands.map((brand) => `
-    <label><input type="checkbox" value="${brand}" class="filter-input" /> ${brand}</label>
-  `).join('');
-
-  brandFilters.querySelectorAll('input').forEach((input) => {
-    input.addEventListener('change', () => {
-      const value = input.value;
-      if (input.checked) {
-        activeFilters.brand.push(value);
-      } else {
-        activeFilters.brand = activeFilters.brand.filter((item) => item !== value);
-      }
-      currentPage = 1;
-      renderSearchResults();
-    });
-  });
 }
 
 function renderPagination(totalResults) {
@@ -261,30 +231,18 @@ filterInputs.forEach((input) => {
     if (input.checked) {
       if (value === 'inStock') {
         activeFilters.inStock = true;
-      } else if (value.includes('-')) {
-        if (value.startsWith('0')) {
-          activeFilters.price.push(value);
-        } else {
-          activeFilters.price.push(value);
-        }
       } else if (value >= '1' && value <= '5') {
         activeFilters.rating.push(value);
       } else if (Number(value) >= 10) {
         activeFilters.discount.push(value);
-      } else if (!value.includes('-') && !value.startsWith('0')) {
-        activeFilters.brand.push(value);
       }
     } else {
       if (value === 'inStock') {
         activeFilters.inStock = false;
-      } else if (value.includes('-')) {
-        activeFilters.price = activeFilters.price.filter((item) => item !== value);
       } else if (value >= '1' && value <= '5') {
         activeFilters.rating = activeFilters.rating.filter((item) => item !== value);
       } else if (Number(value) >= 10) {
         activeFilters.discount = activeFilters.discount.filter((item) => item !== value);
-      } else if (!value.includes('-') && !value.startsWith('0')) {
-        activeFilters.brand = activeFilters.brand.filter((item) => item !== value);
       }
     }
 
@@ -304,9 +262,6 @@ window.addEventListener('DOMContentLoaded', () => {
   syncWishlistHearts();
   bindCartLink();
   setFilterFromQuery();
-  const query = getCurrentQuery();
-  const matches = getSearchMatches(query);
-  renderBrandFilters(matches);
   renderSearchResults();
   if (typeof attachGlobalSearch === 'function') attachGlobalSearch();
 });
